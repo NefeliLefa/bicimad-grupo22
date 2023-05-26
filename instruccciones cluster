@@ -5,7 +5,7 @@ conectarnos al cluster:
 ssh lherre10@wild.mat.ucm.es
 
 añadir elementos al hadoop:
-scp -r nombre_fichero/ lherre10@wild.mat.ucm.es
+scp -r nombre_fichero/ lherre10@wild.mat.ucm.es:
 con esto subo la practica
 
 número web para observar la interfaz gráfica:

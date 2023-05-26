@@ -40,9 +40,9 @@ for data in filtered_list:
 sorted_weekdays = sorted(weekdays_list, key=lambda x: datetime.strptime(x[1], "%Y-%m-%dT%H:%M:%S.%f%z").time())
 sorted_weekends = sorted(weekends_list, key=lambda x: datetime.strptime(x[1], "%Y-%m-%dT%H:%M:%S.%f%z").time())
 
-'''
+
 # Guardar los resultados en un archivo txt
-with open('results.txt', 'w') as output_file:
+with open('results1.txt', 'w') as output_file:
     output_file.write("Weekdays:\n")
     for data in sorted_weekdays:
         age_range = data[0]
@@ -58,9 +58,9 @@ with open('results.txt', 'w') as output_file:
         output_file.write("Age Range: {}\n".format(age_range))
         output_file.write("Unplug Hour Time: {}\n".format(unplug_hour_time))
         output_file.write("--------------------\n")
+
 '''
-'''
-Print para comprobar  
+#Print para comprobar  
 
 print("Weekdays:")
 for data in sorted_weekdays:
