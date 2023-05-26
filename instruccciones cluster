@@ -1,0 +1,19 @@
+activar cluster:
+sshuttle -HNr lherre10@wild.mat.ucm.es -x wild.mat.ucm.es
+
+conectarnos al cluster:
+ssh lherre10@wild.mat.ucm.es
+
+añadir elementos al hadoop:
+scp -r nombre_fichero/ lherre10@wild.mat.ucm.es
+
+número web para observar la interfaz gráfica:
+192.168.135.1:18081
+
+
+
+HADOOP
+hdfs dfs -put "archivo"
+hdfs dfs -get "archivo"
+hdfs dfs -rm "archivo"
+hdfs dfs -ls
