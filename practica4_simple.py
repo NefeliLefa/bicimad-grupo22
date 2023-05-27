@@ -39,8 +39,36 @@ for data in filtered_list:
 # Ordena según unplug_hourTime
 sorted_weekdays = sorted(weekdays_list, key=lambda x: datetime.strptime(x[1], "%Y-%m-%dT%H:%M:%S.%f%z").time())
 sorted_weekends = sorted(weekends_list, key=lambda x: datetime.strptime(x[1], "%Y-%m-%dT%H:%M:%S.%f%z").time())
+# Creamos dos plots para cada franja de edad
 
+age_ranges = range(1,7)
 
+for age_range in age_ranges:
+    filtered_age_weekdays = list(filter(lambda x: x[0] == age_range, sorted_weekdays))
+    filtered_age_weekends = list(filter(lambda x: x[0] == age_range, sorted_weekends))
+
+    # Extraer horas
+    hour_data_weekdays = [datetime.strptime(data[1], "%Y-%m-%dT%H:%M:%S.%f%z").hour for data in filtered_age_weekdays]
+    hour_data_weekends = [datetime.strptime(data[1], "%Y-%m-%dT%H:%M:%S.%f%z").hour for data in filtered_age_weekends]
+
+    # Histograma age_Range, weekdays
+
+    plt.hist(hour_data_weekdays,bins=24, range=(0, 24), color='blue')
+    plt.xlabel('Time Intervals')
+    plt.ylabel('Users')
+    plt.title(f'Histogram: Age Range & Weekdays {age_range} ')
+    plt.savefig(f'histo_weekdays_{age_range}.png')
+    plt.show()
+
+    # Histigrama age_Range, weekends
+
+    plt.hist(hour_data_weekends,bins=24, range=(0, 24), color='green')
+    plt.xlabel('Time Intervals')
+    plt.ylabel('Users')
+    plt.title(f'Histogram: Age Range{age_range} & Weekends')
+    plt.savefig(f"histo_weekends_{age_range}.png")
+    plt.show()
+'''
 # Guardar los resultados en un archivo txt
 with open('results1.txt', 'w') as output_file:
     output_file.write("Weekdays:\n")
@@ -58,7 +86,7 @@ with open('results1.txt', 'w') as output_file:
         output_file.write("Age Range: {}\n".format(age_range))
         output_file.write("Unplug Hour Time: {}\n".format(unplug_hour_time))
         output_file.write("--------------------\n")
-
+'''
 '''
 #Print para comprobar  
 
