@@ -6,6 +6,8 @@ PRPA: Práctica 4, Spark
 
 # Problema que no pudimos resolver
 Esta era nuestra idea inicial, pero no pudimos ejecutar nuestro programa 'practica4_spark_plot_all.py' en el cluster. El problema que nos salía era el que se encuentra en 'Screenshot from 2023-05-28 20-46-50.png'. 
+
+Para probarlo en nuestro ordenador con las sample hicimos 'practica4_simple.py'. Las gráficas mostradas abajo se obtuvieron con este c
 ## Definición del problema a resolver
 Hemos utilizado los datos de Bicimad para encontrar cuántos viajes se realizan por intervalos de tiempo entresemana y los fines de semana por cada rango de edad.  
 ## Diseño e implementación en Spark
