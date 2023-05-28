@@ -48,11 +48,11 @@ def main(filename):
                 # Filter data for the current age range
                 age_range_weekdays_rdd = weekdays_rdd.filter(lambda x: x[0] == age_range).\
                                         map(lambda x: (x[1][:13], 1)).\
-                                        countByKey()
+                                        reduceByKey(lambda x,y: x+y)
 
                 age_range_weekends_rdd = weekends_rdd.filter(lambda x: x[0] == age_range).\
                                         map(lambda x: (x[1][:13], 1)).\
-                                        countByKey()
+                                        reduceByKey(lambda x,y: x+y)
                 
                 for time_interval, user_count in age_range_weekdays_rdd.items():
                     output_file.write(f" {time_interval} Users: {user_count}\n")
