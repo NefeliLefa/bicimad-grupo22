@@ -55,11 +55,11 @@ def main(filename):
                                         map(lambda x: (x[1][:13], 1)).\
                                         reduceByKey(lambda x,y: x+y)
                 
-                for time_interval, user_count in age_range_weekdays_rdd.items():
+                for time_interval, user_count in age_range_weekdays_rdd.collect():
                     output_file.write(f" {time_interval} Users: {user_count}\n")
 
                 output_file.write(f"Weekends {age_range}:\n")
-                for time_interval, user_count in age_range_weekends_rdd.items():
+                for time_interval, user_count in age_range_weekends_rdd.collect():
                     output_file.write(f" {time_interval} - Users: {user_count}\n")
 
 if __name__=="__main_":
