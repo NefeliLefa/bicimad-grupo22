@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+import matplotlib.pyplot as plt
 
 #tiene como argumento una linea del archivo json, y extrae los datos ageRange, unplug_hour_time en una lista
 def extraer(line):
