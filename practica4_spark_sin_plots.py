@@ -2,6 +2,7 @@ from pyspark import SparkContext
 import matplotlib.pyplot as plt
 import json
 from datetime import datetime
+import sys
 
 
 def extraer(line):
@@ -61,4 +62,8 @@ def main(filename):
                 for time_interval, user_count in age_range_weekends_rdd.items():
                     output_file.write(f" {time_interval} - Users: {user_count}\n")
 
-
+if __name__=="__main_":
+    file = ""
+    if len(sys.argv)>1:
+        file = sys.argv[1]
+main(file)
