@@ -37,8 +37,8 @@ def main(filename):
 
         # Ordena según unplug_hourTime
         # wide transformation
-        sorted_weekdays_rdd = weekdays_rdd.sortBy(lambda x: datetime.strptime(x[1], "%Y-%m-%dT%H:%M:%S.%f%z").time())
-        sorted_weekends_rdd = weekends_rdd.sortBy(lambda x: datetime.strptime(x[1], "%Y-%m-%dT%H:%M:%S.%f%z").time())
+        #sorted_weekdays_rdd = weekdays_rdd.sortBy(lambda x: datetime.strptime(x[1], "%Y-%m-%dT%H:%M:%S.%f%z").time())
+        #sorted_weekends_rdd = weekends_rdd.sortBy(lambda x: datetime.strptime(x[1], "%Y-%m-%dT%H:%M:%S.%f%z").time())
 
         age_ranges = range(1, 7)
         with open ("results.txt", "w") as output_file:
@@ -46,11 +46,11 @@ def main(filename):
             for age_range in age_ranges:
                 output_file.write(f"Weekdays {age_range}:\n")
                 # Filter data for the current age range
-                age_range_weekdays_rdd = sorted_weekdays_rdd.filter(lambda x: x[0] == age_range).\
+                age_range_weekdays_rdd = weekdays_rdd.filter(lambda x: x[0] == age_range).\
                                         map(lambda x: (x[1][:13], 1)).\
                                         countByKey()
 
-                age_range_weekends_rdd = sorted_weekends_rdd.filter(lambda x: x[0] == age_range).\
+                age_range_weekends_rdd = weekends_rdd.filter(lambda x: x[0] == age_range).\
                                         map(lambda x: (x[1][:13], 1)).\
                                         countByKey()
                 
