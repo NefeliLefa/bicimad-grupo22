@@ -1,7 +1,7 @@
 # bicimad-grupo22
 PRPA: Práctica 4, Spark
 
-Para probarlo en nuestro ordenador con las sample hicimos 'practica4_simple.py'. Las gráficas mostradas abajo se obtuvieron con este código. Estas sí cumplen con lo que queríamos.
+Para probarlo en nuestro ordenador con las sample hicimos 'practica4_simple.py'. Las gráficas mostradas abajo se obtuvieron con este código. 
 
 Para obtener resultados del cluster se hizo el programa 'funciona.py', el cual devuelve todos los valores necesarios para pintar el histograma. Estos se encuentrar en el archivo 'resultados'. La idea era que nos devolviese un histograma al igual que en 'practica4_simple.py', pero esto no fue posible. No pudimos ejecutar nuestro programa 'practica4_spark_plot_all.py' en el cluster. El problema que nos salía era el que se encuentra en 'Screenshot from 2023-05-28 20-46-50.png'. Creemos que este se debe a usar la librería matplotlib.
 
