@@ -7,7 +7,8 @@ Para probarlo en nuestro ordenador con las sample hicimos 'practica4_simple.py'.
 
 Para obtener resultados del cluster se hizo el programa 'funciona.py', el cual devuelve todos los valores necesarios para pintar el histograma. Estos se encuentrar en el archivo 'resultados'.
 ## Definición del problema a resolver
-Hemos utilizado los datos de Bicimad para encontrar cuántos viajes se realizan por intervalos de tiempo entresemana y los fines de semana por cada rango de edad.  
+Hemos utilizado los datos de Bicimad para encontrar cuántos viajes se realizan por intervalos de tiempo entresemana y los fines de semana por cada rango de edad. Pensamos que sería interesante conocer esta información para intentar ver reflejados algunos posibles usos de las bicicletas: si las personas jóvenes lo usan los fines de semana de madrugada es posiblemente para ir o volver de fiesta, si los adultos las usan entresemana a primera hora de la mañana para ir al trabajo, etc.
+
 ## Diseño e implementación en Spark
 Dado el tamaño de los datos hemos utilizado Spark en python, pyspark. 
 
