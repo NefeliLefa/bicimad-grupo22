@@ -1,12 +1,14 @@
 # bicimad-grupo22
 PRPA: Práctica 4, Spark
 
-Para probarlo en nuestro ordenador con las sample hicimos 'practica4_simple.py'. Las gráficas mostradas abajo se obtuvieron con este código. 
-
-Para obtener resultados del cluster se hizo el programa 'funciona.py', el cual devuelve todos los valores necesarios para pintar el histograma. Estos se encuentrar en el archivo 'resultados'. La idea era que nos devolviese un histograma al igual que en 'practica4_simple.py', pero esto no fue posible. No pudimos ejecutar nuestro programa 'practica4_spark_plot_all.py' en el cluster. El problema que nos salía era el que se encuentra en 'Screenshot from 2023-05-28 20-46-50.png'. Creemos que este se debe a usar la librería matplotlib.
+El archivo que presenta el problema, cómo se ha resuelto, los resultados y las conclusiones de manera extensa es 'Resultados_práctica_paralela.pdf'. Aquí se muestra un breve resumen.
 
 ## Definición del problema a resolver
 Hemos utilizado los datos de Bicimad para encontrar cuántos viajes se realizan por intervalos de tiempo entresemana y los fines de semana por cada rango de edad. Pensamos que sería interesante conocer esta información para intentar ver reflejados algunos posibles usos de las bicicletas: si las personas jóvenes lo usan los fines de semana de madrugada es posiblemente para ir o volver de fiesta (esto puede verse en el ejemplo puesto abajo, los findes las personas de 0-16 años usan más las bicicletas por la noche en comparación con los días de diario), si los adultos las usan entresemana a primera hora de la mañana para ir al trabajo, etc.
+
+Para probarlo en nuestro ordenador con las sample hicimos 'practica4_simple.py'. Las gráficas mostradas abajo se obtuvieron con este código. 
+
+Para obtener resultados del cluster se hizo el programa 'funciona.py', el cual devuelve todos los valores necesarios para pintar el histograma. Estos se encuentrar en el archivo 'resultados'. La idea era que nos devolviese un histograma al igual que en 'practica4_simple.py', pero esto no fue posible. No pudimos ejecutar nuestro programa 'practica4_spark_plot_all.py' en el cluster. El problema que nos salía era el que se encuentra en 'Screenshot from 2023-05-28 20-46-50.png'. Creemos que este se debe a usar la librería matplotlib.
 
 ## Diseño e implementación en Spark
 Dado el tamaño de los datos hemos utilizado Spark en python, pyspark. 
