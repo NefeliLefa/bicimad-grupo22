@@ -26,19 +26,10 @@ def main(filename):
         # extrae los datos ageRange, unplug_hour_time y filtra ageRange = 0
         data_rdd = lines_rdd.map(extraer).filter(lambda x: x[0] != 0) #narrow transformation
 
-        # Ordena según unplug_hourTime
-        #sorted_rdd = data_rdd.sortBy(lambda x: datetime.strptime(x[1], "%Y-%m-%dT%H:%M:%S.%f%z")) #wide transformation
-
         # IDEA: Distinguir casos, entresemana y fin de semana
-        # narrow transformation
         # Los 10 primeros str representan la fecha, lo que quiero extraer
         weekdays_rdd = data_rdd.filter(lambda x: get_weekday(x[1][:10]) < 5)
         weekends_rdd = data_rdd.filter(lambda x: get_weekday(x[1][:10]) >= 5)
-
-        # Ordena según unplug_hourTime
-        # wide transformation
-        #sorted_weekdays_rdd = weekdays_rdd.sortBy(lambda x: datetime.strptime(x[1], "%Y-%m-%dT%H:%M:%S.%f%z").time())
-        #sorted_weekends_rdd = weekends_rdd.sortBy(lambda x: datetime.strptime(x[1], "%Y-%m-%dT%H:%M:%S.%f%z").time())
 
         age_ranges = range(1, 7)
         with open ("results.txt", "w") as output_file:
